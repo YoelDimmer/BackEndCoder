@@ -100,18 +100,18 @@ const deleteFile = async (path)=> {
 const desafio = async () => {
     try {
         const productManager = new ProductManager("./products.json");
-        await productManager.addProduct({
+        /* await productManager.addProduct({
             title: "producto prueba",
             description: "Este es un producto prueba",
             price: 200,
             thumbnail: "sin imagen",
             code: "abc123",
             stock: 25
-        });
+        }); */
         const products = await productManager.getProducts();
         console.log('Productos:', products);
-        productManager.getProductById()
-        productManager.deleteProduct() 
+        /* productManager.getProductById()
+        productManager.deleteProduct()  */
         /* await productManager.updateProduct(8741, "Nuevo Titulo", "Descripcion", 200, "Imagen", "Codigo", 10) */
     } catch (error) {
         console.error(' Ha ocurrido un error: ', error.message); 
@@ -119,5 +119,7 @@ const desafio = async () => {
 }
 
 desafio()
+
+module.exports = ProductManager
 
 
